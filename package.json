@@ -1,12 +1,13 @@
 {
-  "name": "shared-server",
+  "name": "location-tracker-server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "build": "npm install",
     "dev": "nodemon server.js",
-    "build": "npm install && node server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
