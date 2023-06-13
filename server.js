@@ -1,8 +1,12 @@
 import express from 'express';
 import locationFunction from './location.function.js'
+import morgan from "morgan";
 
 const port = 2000;
 let app = express();
+
+morgan("tiny");
+
 
 app.get("/", async (req, res, next) => {
 
