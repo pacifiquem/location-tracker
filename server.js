@@ -12,7 +12,7 @@ app.get("/", async (req, res, next) => {
         res.status(200).json({
             success: true,
             message: 'welcome to M.Pac\'s server',
-            locationData: location
+            locationInfo: location
         });
         
     } catch (error) {
