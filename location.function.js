@@ -4,12 +4,11 @@ const locationFunction = (req) => {
 
     console.log(req.ip);
 
-    let ip = req.ip.split(":")[3];
-    let geo =  geoip.lookup(ip);
+    let geo =  geoip.lookup(req.ip);
     
     return {
         geo: geo,
-        ip: ip
+        ip: req.ip
     };
 
 }

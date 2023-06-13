@@ -1,21 +1,22 @@
 import express from 'express';
 import locationFunction from './location.function.js'
-import morgan from "morgan";
 
 const port = 2000;
-let app = express();
-
-morgan("tiny");
+const app = express();
 
 
 app.get("/", async (req, res, next) => {
 
     try {
         let location =  locationFunction(req);
+        
+        console.log(location);
+
+        console.log("====================================================")
 
         res.status(200).json({
             success: true,
-            message: 'welcome to M.Pac\'s server',
+            message: 'welcome to pacifiquem\'s server',
             locationInfo: location
         });
         
@@ -27,6 +28,10 @@ app.get("/", async (req, res, next) => {
         console.log(error)
     }
 
+});
+
+app.get("/favicon.ico", (req, res) => {
+    res.send("D");
 });
 
 app.listen(port, () => {
